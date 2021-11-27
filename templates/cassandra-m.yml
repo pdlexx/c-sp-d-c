@@ -1,0 +1,15 @@
+
+
+  cassandra-seed:
+    image: cassandra:3.11
+    ports:
+      - "9042:9042"
+    volumes:
+      - "cassandra_data_seed:/var/lib/cassandra"
+    environment:
+      - "CASSANDRA_SEEDS=cassandra-seed"
+      - "CASSANDRA_CLUSTER_NAME=Test Cluster"
+        # needed for setting up custom cluster name
+      - "CASSANDRA_DC=se1"
+      - "CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch"
+        #restart: always

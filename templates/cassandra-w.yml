@@ -1,0 +1,22 @@
+
+  cassandra1:
+    image: cassandra:3.11
+    volumes:
+      - "cassandra_data_1:/var/lib/cassandra"
+    environment:
+      - "CASSANDRA_SEEDS=cassandra-seed"
+      - "CASSANDRA_CLUSTER_NAME=Test Cluster"
+        #needed for setting up custom cluster name
+      - "CASSANDRA_DC=se1"
+      - "CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch"
+    depends_on:
+      - cassandra-seed
+      #restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
