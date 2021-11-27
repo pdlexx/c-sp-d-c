@@ -6,11 +6,12 @@ Standalone cluster for testing.
 
 The Docker compose will create the following containers:
 
-spark-master
-spark-worker-X
-demo-database
-cassandra-seed
-cassandraX
+* spark-master
+* spark-worker-X
+* demo-database
+* cassandra-seed
+* cassandraX
+
 
 # Installation
 
@@ -20,6 +21,8 @@ cassandraX
 
 * Docker compose  installed
 
+* Internet connection
+
 ## Build the image with proper version (3.0.0) of Spark (not found in dockerhub)
 
 ```sh
@@ -28,15 +31,15 @@ docker build -t cluster-apache-spark:3.0.0 .
 
 ## Generate docker-compose.yaml:
 
-# Specify inputs of the script:
-# $1 - worker replicas of Cassandra & Spark (9 max)
-# $2 - limits of Cassandra worker memory GB
-# $3 - limits of Cassandra worker CPUs
-# $4 - spark worker memory GB
-# $5 - spark worker cores
+Specify inputs of the script:
+* $1 - worker replicas of Cassandra & Spark (9 max)
+* $2 - limits of Cassandra worker memory GB
+* $3 - limits of Cassandra worker CPUs
+* $4 - spark worker memory GB
+* $5 - spark worker cores
 
 ```sh
-cluster-script.sh 1 2 3 4 5
+./cluster-script.sh 1 2 3 4 5
 ```
 
 
@@ -56,9 +59,10 @@ http://localhost:9090/
 
 ## Cassandra
 
+```sh
 docker ps
 docker exec test_cassandra-seed_1  nodetool status
-
+```
 
 # Why a standalone cluster?
 
