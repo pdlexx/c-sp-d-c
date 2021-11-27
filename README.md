@@ -2,7 +2,7 @@
 
 # General
 
-Standalone cluster for testing.
+Standalone clusters for testing!
 
 The Docker compose will create the following containers:
 
@@ -23,7 +23,7 @@ The Docker compose will create the following containers:
 
 * Internet connection
 
-## Build the image with proper version (3.0.0) of Spark (not found in dockerhub)
+## Build the image with proper version (3.0.0) of Spark (not found on dockerhub)
 
 ```sh
 docker build -t cluster-apache-spark:3.0.0 .
@@ -51,13 +51,13 @@ The final step to create your test cluster will be to run the compose file:
 docker-compose up -d
 ```
 
-## Validate cluster
+## Validate cluster:
 
-## Spark Master
+Spark Master:
 
 http://localhost:9090/
 
-## Cassandra
+Cassandra:
 
 ```sh
 docker ps
