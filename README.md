@@ -53,11 +53,11 @@ docker-compose up -d
 
 ## Validate cluster:
 
-Spark Master:
+* Spark Master:
 
 http://localhost:9090/
 
-Cassandra:
+* Cassandra:
 
 ```sh
 docker ps
